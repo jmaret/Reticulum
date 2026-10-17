@@ -44,7 +44,7 @@ The room is free to open. Nothing the visitor answers is stored. The interpreter
 - `/architecture` draws the conceptual, logical, and physical views, then renders the architecture Summary.
 - `/releases` renders `CHANGELOG.md`. The header version chip links there and shows the package version.
 - A field of stars, math, and statistics behind the pages, with the AetherForge paper wash so the type stays readable.
-- A static export on GitHub Pages at https://jmaret.github.io/Reticulum/. The Pages build prefixes styles, the drawing, and the icon with `/Reticulum`. A local build leaves that prefix empty.
+- A static export on GitHub Pages at https://reticulum.aathira-services.com/. Styles, the drawing, and the icon load from the site root. https://jmaret.github.io/Reticulum/ redirects there.
 
 ## Out of scope
 
@@ -69,7 +69,7 @@ The room is free to open. Nothing the visitor answers is stored. The interpreter
 | V-10 | The product name is Reticulum alone | Met |
 | V-11 | `/language` covers origins, comparisons with Python, Julia, and SQL, why someone chooses R, and where it has a following | Met |
 | V-12 | `/further` teaches S3 methods through missing values, on a page of its own, with the same checks and Try it | Met |
-| V-13 | On GitHub Pages, styles, the drawing, and the icon load under `/Reticulum`. A local build leaves that prefix empty | Met |
+| V-13 | The public site is https://reticulum.aathira-services.com/. Styles, the drawing, and the icon load from `/` | Met |
 | V-14 | `/practice` teaches `library`, base graphics, and statistical summaries. Try it shows stdout and stderr, and a plot when the program draws one | Met |
 
 ## Acceptance
@@ -82,3 +82,4 @@ A visitor can read the language page, open a lesson on the first page, on `/furt
 - 2026-10-16 — Practice page: twelve lessons on `library`, base graphics, and summaries. Try it shows the plot beside the printed result.
 - 2026-10-16 — The public site is GitHub Pages at https://jmaret.github.io/Reticulum/, with assets prefixed by `/Reticulum`.
 - 2026-10-16 — Try it shows stdout and stderr. The icon loads under the same prefix.
+- 2026-10-16 — The public site is https://reticulum.aathira-services.com/. Assets load from the site root.
