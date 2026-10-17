@@ -15,6 +15,8 @@ type WebRSession = {
   Shelter: new () => Shelter;
 };
 
+type CaptureLine = { type?: string; data?: unknown };
+
 type Shelter = {
   captureR: (
     code: string,
@@ -24,9 +26,17 @@ type Shelter = {
       captureConditions?: boolean;
       captureGraphics?: { width: number; height: number };
     },
-  ) => Promise<{ output?: { type?: string; data?: string }[]; images?: ImageBitmap[] }>;
+  ) => Promise<{ output?: CaptureLine[]; images?: ImageBitmap[] }>;
   purge: () => Promise<void>;
 };
+
+function printedText(output: CaptureLine[] | undefined): string {
+  return (output ?? [])
+    .filter((line) => line.type === "stdout" || line.type === "stderr")
+    .map((line) => (typeof line.data === "string" ? line.data : ""))
+    .join("")
+    .trim();
+}
 
 declare global {
   var __reticulumWebR: WebRModule["WebR"] | undefined;
@@ -103,10 +113,7 @@ export function Playground() {
             captureConditions: true,
             captureGraphics: { width: 720, height: 420 },
           });
-          const text = (result.output ?? [])
-            .map((line) => line.data ?? "")
-            .join("")
-            .trim();
+          const text = printedText(result.output);
           const images = (await Promise.all((result.images ?? []).map(bitmapToPng))).filter(Boolean);
           if (!cancelled) {
             setPlots(images);

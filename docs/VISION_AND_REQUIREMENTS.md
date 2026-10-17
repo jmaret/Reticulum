@@ -44,7 +44,7 @@ The room is free to open. Nothing the visitor answers is stored. The interpreter
 - `/architecture` draws the conceptual, logical, and physical views, then renders the architecture Summary.
 - `/releases` renders `CHANGELOG.md`. The header version chip links there and shows the package version.
 - A field of stars, math, and statistics behind the pages, with the AetherForge paper wash so the type stays readable.
-- A static export on GitHub Pages at https://jmaret.github.io/Reticulum/. The Pages build prefixes styles and the drawing with `/Reticulum`. A local build leaves that prefix empty.
+- A static export on GitHub Pages at https://jmaret.github.io/Reticulum/. The Pages build prefixes styles, the drawing, and the icon with `/Reticulum`. A local build leaves that prefix empty.
 
 ## Out of scope
 
@@ -69,15 +69,16 @@ The room is free to open. Nothing the visitor answers is stored. The interpreter
 | V-10 | The product name is Reticulum alone | Met |
 | V-11 | `/language` covers origins, comparisons with Python, Julia, and SQL, why someone chooses R, and where it has a following | Met |
 | V-12 | `/further` teaches S3 methods through missing values, on a page of its own, with the same checks and Try it | Met |
-| V-13 | On GitHub Pages, styles and the drawing load under `/Reticulum`. A local build leaves that prefix empty | Met |
-| V-14 | `/practice` teaches `library`, base graphics, and statistical summaries, and Try it shows a plot when the program draws one | Met |
+| V-13 | On GitHub Pages, styles, the drawing, and the icon load under `/Reticulum`. A local build leaves that prefix empty | Met |
+| V-14 | `/practice` teaches `library`, base graphics, and statistical summaries. Try it shows stdout and stderr, and a plot when the program draws one | Met |
 
 ## Acceptance
 
-A visitor can read the language page, open a lesson on the first page, on `/further`, or on `/practice`, answer a check, see whether it was right, and open Try it so the program runs in the browser. A program that plots shows the figure on `/play`. The visitor can read the vision summary, the three architecture pictures, and the release notes from the version chip. The page does not ask for a sign-in, and a check does not leave the browser.
+A visitor can read the language page, open a lesson on the first page, on `/further`, or on `/practice`, answer a check, see whether it was right, and open Try it so the program runs in the browser. The result is the program's printed text, and a program that plots shows the figure on `/play`. The visitor can read the vision summary, the three architecture pictures, and the release notes from the version chip. The page does not ask for a sign-in, and a check does not leave the browser.
 
 ## Changelog
 
 - 2026-10-16 — First room: thirteen lessons, eleven further lessons, checks, Try it with WebR, the language page, vision, architecture drawings, and release notes. The backdrop is stars, math, and statistics.
 - 2026-10-16 — Practice page: twelve lessons on `library`, base graphics, and summaries. Try it shows the plot beside the printed result.
 - 2026-10-16 — The public site is GitHub Pages at https://jmaret.github.io/Reticulum/, with assets prefixed by `/Reticulum`.
+- 2026-10-16 — Try it shows stdout and stderr. The icon loads under the same prefix.

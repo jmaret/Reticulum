@@ -5,7 +5,8 @@
 - Practice is a third lesson page. Twelve programs cover `library` and `::`, a scatter, a histogram, a boxplot, a fitted line, and summaries: mean and median, standard deviation, `table`, correlation, and a paired test.
 - Try it shows the plot when a program draws one, next to any printed result.
 - The header version chip is v0.2.0.
-- The public site is https://jmaret.github.io/Reticulum/. The Pages build prefixes assets with `/Reticulum`.
+- The public site is https://jmaret.github.io/Reticulum/. The Pages build prefixes assets, including the icon, with `/Reticulum`.
+- Try it shows the program's stdout and stderr. Package messages and other conditions stay out of that text.
 
 ## 0.1.0 — 2026-10-16
 

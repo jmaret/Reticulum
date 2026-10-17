@@ -6,11 +6,11 @@
 
 ## Summary
 
-Reticulum is a static Next.js site. The short path lives in `content/lessons.ts` and renders on `/`. The later lessons live in `content/further.ts` and render on `/further`. Practice lives in `content/practice.ts` and renders on `/practice`. The browser compares a chosen answer with the lesson's answer and shows the explanation. Try it opens `/play` with the program in the URL hash. `/play` downloads WebR, runs the snippet in the browser, and shows a plot when the program draws one.
+Reticulum is a static Next.js site. The short path lives in `content/lessons.ts` and renders on `/`. The later lessons live in `content/further.ts` and render on `/further`. Practice lives in `content/practice.ts` and renders on `/practice`. The browser compares a chosen answer with the lesson's answer and shows the explanation. Try it opens `/play` with the program in the URL hash. `/play` downloads WebR, runs the snippet in the browser, shows stdout and stderr, and shows a plot when the program draws one.
 
 `/language` is a reading page: origins, comparisons, reasons to choose the language, and where it is used. `/vision` and `/architecture` read the Summary section of the two documents at build time. `/releases` renders `CHANGELOG.md`. The header chip reads the version from `package.json`.
 
-Hosting is a static export on GitHub Pages at https://jmaret.github.io/Reticulum/. The Pages build prefixes assets with `/Reticulum`. A local build leaves that prefix empty. There is no database and no paid API. The pictures on the architecture page are the conceptual, logical, and physical views. The Mermaid diagrams later in this document are the same three views, and they change together.
+Hosting is a static export on GitHub Pages at https://jmaret.github.io/Reticulum/. The Pages build prefixes assets, including the icon, with `/Reticulum`. A local build leaves that prefix empty. There is no database and no paid API. The pictures on the architecture page are the conceptual, logical, and physical views. The Mermaid diagrams later in this document are the same three views, and they change together.
 
 ## Conceptual
 
@@ -60,7 +60,7 @@ flowchart TD
 - `src/app/language/page.tsx` is the reading page on origins, comparisons, and use. It does not grade a check and it does not start R.
 - `src/lib/docs.ts` reads a file at build time and returns the body of `## Summary`. The vision and architecture pages render that body. They do not keep a second copy.
 - `src/lib/playground.ts` builds `/play/#code=` with the lesson program percent-encoded in the fragment. The code is not sent to a Reticulum server.
-- `src/components/Playground.tsx` loads WebR 0.5.5 from `webr.r-wasm.org` with the `post-message` channel, so the page does not need cross-origin isolation headers. It captures printed output and any plot, and shows both on the page.
+- `src/components/Playground.tsx` loads WebR 0.5.5 from `webr.r-wasm.org` with the `post-message` channel, so the page does not need cross-origin isolation headers. The result text is stdout and stderr. Conditions stay out of that text. A plot is shown beside it.
 - `package.json` version is the header chip. `CHANGELOG.md` is the releases page.
 - The three pictures on `/architecture` are SVG in `src/components/architecture/Diagrams.tsx`. They match these Mermaid diagrams.
 
@@ -77,7 +77,7 @@ flowchart LR
   browser -->|"Try it only"| webr
 ```
 
-- The export is static. GitHub Pages serves it at https://jmaret.github.io/Reticulum/, so the Pages build sets `BASE_PATH=/Reticulum` and styles, scripts, and pictures load under that prefix. A local build leaves the path empty. The export contains the pages, the fonts, the backdrop, and the icon. It does not contain an R interpreter.
+- The export is static. GitHub Pages serves it at https://jmaret.github.io/Reticulum/, so the Pages build sets `BASE_PATH=/Reticulum` and styles, scripts, pictures, and the icon load under that prefix. A local build leaves the path empty. The export contains the pages, the fonts, the backdrop, and the icon. It does not contain an R interpreter.
 - The browser downloads those files and grades checks in the tab. Answers are not sent to Reticulum and are not stored.
 - `webr.r-wasm.org` sends the WebR runtime when the visitor opens `/play`. The program runs in the tab after that download. The public WebR editor was not used, because it does not document a URL that carries the lesson source.
 
@@ -113,3 +113,4 @@ The chrome matches AetherForge.
 - 2026-10-16 — First room: static export, lessons, in-browser checks, WebR on `/play`, three architecture views, and summary pages. The backdrop is stars, math, and statistics.
 - 2026-10-16 — `/practice` joins the lesson pages. `/play` captures a base-graphics plot and shows it with the printed result.
 - 2026-10-16 — GitHub Pages serves the site at https://jmaret.github.io/Reticulum/. The Pages build sets `BASE_PATH=/Reticulum`.
+- 2026-10-16 — Try it prints stdout and stderr only. The icon uses the same `/Reticulum` prefix as the other assets.

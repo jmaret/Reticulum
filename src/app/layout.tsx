@@ -34,6 +34,8 @@ const mono = localFont({
   display: "swap",
 });
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const metadata: Metadata = {
   title: {
     default: "Reticulum",
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
   description:
     "A public room that teaches R, from the top of a script through copy-on-modify, NA, and errors.",
   icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    icon: [{ url: `${basePath}/icon.svg`, type: "image/svg+xml" }],
   },
 };
 
@@ -51,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="en"
       className={`${display.variable} ${sans.variable} ${mono.variable} h-full`}
-      style={{ ["--hero" as string]: `url("${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/hero-bg.svg")` }}
+      style={{ ["--hero" as string]: `url("${basePath}/hero-bg.svg")` }}
     >
       <body className="flex min-h-full flex-col font-[family-name:var(--font-sans)] antialiased">
         <div className="flex min-h-screen flex-col">
