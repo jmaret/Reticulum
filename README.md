@@ -24,7 +24,7 @@ npm run dev
 
 ## Deploy
 
-`npm run build` writes a static site to `out/`. GitHub Pages serves that export from `main` through `.github/workflows/pages.yml`. The public site is https://jmaret.github.io/Reticulum/, so the Pages build sets `BASE_PATH=/Reticulum`. A local build leaves the path empty.
+`npm run build` writes a static site to `out/`. GitHub Pages serves that export from `main` through `.github/workflows/pages.yml`. The public site is https://reticulum.aathira-services.com/, so the Pages build leaves asset paths at the site root. https://jmaret.github.io/Reticulum/ redirects there.
 
 ## Docs
 

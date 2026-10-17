@@ -1,5 +1,10 @@
 # Releases
 
+## 0.2.1 — 2026-10-16
+
+- The public site is https://reticulum.aathira-services.com/. Styles, pictures, and the icon load from the site root, so the page keeps its layout.
+- The header version chip is v0.2.1.
+
 ## 0.2.0 — 2026-10-16
 
 - Practice is a third lesson page. Twelve programs cover `library` and `::`, a scatter, a histogram, a boxplot, a fitted line, and summaries: mean and median, standard deviation, `table`, correlation, and a paired test.

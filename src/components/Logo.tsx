@@ -10,6 +10,8 @@ export function Logo({ compact = false, href = "/" }: LogoProps) {
     <Link href={href} className="inline-flex min-w-0 items-center gap-2.5 no-underline" aria-label="Reticulum home">
       <svg
         viewBox="0 0 36 36"
+        width="36"
+        height="36"
         aria-hidden="true"
         className="size-8 shrink-0 rounded-full ring-1 ring-[var(--line)] sm:size-9"
       >
